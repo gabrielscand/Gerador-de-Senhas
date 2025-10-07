@@ -1,0 +1,82 @@
+/* ======= RESET BÁSICO ======= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #2c3e50, #4ca1af);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  color: #f4f4f4;
+}
+
+/* ======= CONTAINER ======= */
+.container {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2rem 3rem;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  width: 100%;
+  max-width: 450px;
+  backdrop-filter: blur(10px);
+}
+
+/* ======= TÍTULO ======= */
+h1 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+/* ======= FORMULÁRIO ======= */
+.form-group {
+  margin-bottom: 1.2rem;
+}
+
+label {
+  display: block;
+  font-size: 1rem;
+  margin-bottom: 0.3rem;
+}
+
+input[type="number"] {
+  width: 100%;
+  padding: 0.6rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  text-align: center;
+  outline: none;
+}
+
+/* ======= CHECKBOX OPTIONS ======= */
+.options {
+  text-align: left;
+  margin-bottom: 1.5rem;
+}
+
+.options label {
+  display: block;
+  margin: 0.4rem 0;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+input[type="checkbox"] {
+  margin-right: 8px;
+}
+
+/* ======= BOTÕES ======= */
+button {
+  background: #4ca1af;
+  border: none;
+  color: white;
+  font-size: 1.1rem;
+  padding: 0.8rem 1.2rem;
+  border-radius: 5px;
+}
