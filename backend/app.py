@@ -8,6 +8,7 @@ CORS(app)
 @app.route("/generate", methods=["GET"])
 def generate():
     length = int(request.args.get("length", 12))
+    length = max(1, min(length, 30))  # Garante que o comprimento esteja entre 1 e 30
     use_upper = request.args.get("upper", "true").lower() == "true"
     use_lower = request.args.get("lower", "true").lower() == "true"
     use_digits = request.args.get("digits", "true").lower() == "true"

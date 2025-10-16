@@ -5,7 +5,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const copyBtn = document.getElementById("copyBtn");
 
   generateBtn.addEventListener("click", async () => {
-    const length = document.getElementById("length").value;
+    // lê e converte para número, com fallback
+    let length = parseInt(document.getElementById("length").value, 10);
+    if (Number.isNaN(length)) length = 12;
+    // limita 1..30 no cliente
+    length = Math.max(1, Math.min(length, 30));
+
     const upper = document.getElementById("upper").checked;
     const lower = document.getElementById("lower").checked;
     const digits = document.getElementById("digits").checked;
@@ -15,7 +20,6 @@ document.addEventListener("DOMContentLoaded", () => {
       // Faz a requisição para o back-end Flask
       const response = await fetch(`http://127.0.0.1:5000/generate?length=${length}&upper=${upper}&lower=${lower}&digits=${digits}&symbols=${symbols}`);
       const data = await response.json();
-
       // Exibe a senha no campo
       passwordField.textContent = data.password;
     } catch (error) {
